@@ -14,6 +14,8 @@ export default async function ActivityDetails({ params }) {
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ;
 
+  console.log("baseUrl", baseUrl);
+
   const cookieStore = await cookies();
 
   const activityId = params?.id;

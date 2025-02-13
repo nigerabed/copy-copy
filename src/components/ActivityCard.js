@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ActivityCard({activity}){
 
   const url = activity.asset.url;
-  const newUrl = process.env.BASE_URL + url.slice("http://localhost:4000".length);
+  const newUrl = process.env.NEXT_PUBLIC_BASE_URL + url.slice("http://localhost:4000".length);
   console.log(url);
   console.log(newUrl);
     return(

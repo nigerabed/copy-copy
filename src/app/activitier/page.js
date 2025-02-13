@@ -13,7 +13,8 @@ export default async function Activitier() {
   
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ;
 
-console.log("baseUrl", baseUrl);
+console.log("baseUrl->", baseUrl);
+
   const data = await serverFetch(`${baseUrl}/api/v1/activities`);
   return (
     <>
