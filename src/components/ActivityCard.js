@@ -5,6 +5,8 @@ export default function ActivityCard({activity}){
 
   const url = activity.asset.url;
   const newUrl = process.env.BASE_URL + url.slice("http://localhost:4000".length);
+  console.log(url);
+  console.log(newUrl);
     return(
         <>
         <section className="p-[2em]">

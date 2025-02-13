@@ -12,7 +12,7 @@ export const metadata = {
 
 export default async function ActivityDetails({ params }) {
 
-  const baseUrl = process.env.BASE_URL ;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ;
 
   const cookieStore = await cookies();
 

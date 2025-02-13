@@ -11,7 +11,7 @@ import { serverFetch } from "@/lib/server-fetch";
 export default async function Activitier() {
 
   
-  const baseUrl = process.env.BASE_URL ;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ;
 
 console.log("baseUrl", baseUrl);
   const data = await serverFetch(`${baseUrl}/api/v1/activities`);
