@@ -23,6 +23,7 @@ export default async function kalender() {
     console.log("res", res);
 
     const data = await res.json();
+   
 
     return (
       <>
