@@ -10,7 +10,7 @@ import { serverFetch } from "@/lib/server-fetch";
 
 export default async function Activitier() {
   
-  const baseUrl = process.env.LANDRUP_API_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
   const data = await serverFetch(`${baseUrl}/api/v1/activities`);
   return (
     <>

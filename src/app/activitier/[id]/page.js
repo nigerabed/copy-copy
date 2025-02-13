@@ -13,7 +13,7 @@ import Image from "next/image";
 
 export default async function ActivityDetails({ params }) {
 
-  const baseUrl = process.env.LANDRUP_API_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
 
   console.log("baseUrl", baseUrl);
 

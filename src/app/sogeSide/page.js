@@ -13,7 +13,7 @@ export const metadata = {
 export default async function SogeSide({ searchParams }) {
   let searchedText = searchParams.search;
 
-  const baseUrl = process.env.LANDRUP_API_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
   let allActivities = await serverFetch( `${baseUrl}/api/v1/activities`);
 
   if(searchedText){

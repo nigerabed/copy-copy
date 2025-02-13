@@ -8,7 +8,7 @@ export default async function kalender() {
   const userId = cookieStore.get("landrup_userid");
 
 
-  const baseUrl = process.env.LANDRUP_API_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
   
   try {
     const res = await fetch(

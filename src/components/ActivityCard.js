@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ActivityCard({activity}){
 
-  const baseUrl = process.env.LANDRUP_API_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
   const url = activity.asset.url;
   const newUrl = baseUrl + url.slice("http://localhost:4000".length);
 

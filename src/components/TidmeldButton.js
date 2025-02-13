@@ -15,11 +15,13 @@ export default function TidmeldButton({ activityId }) {
     }
 
     let isTilmeldtDone = false;
-    const baseUrl = process.env.LANDRUP_API_BASE_URL;
+    const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
+    const url = `${baseUrl}/api/v1/users/${userId}/activities/${activityId}`;
+    console.log("uuuuuuuuuurl", url)
     try {
     
       const response = await fetch(
-        `${baseUrl}/api/v1/users/${userId}/activities/${activityId}`,
+        url,
         {
           method: "POST",
           headers: {
