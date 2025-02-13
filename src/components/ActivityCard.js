@@ -3,6 +3,10 @@ import Link from "next/link";
 
 export default function ActivityCard({activity}){
 
+  // Definig baseUrl based on environment. the url is mentioned in .env.development and env.production 
+// to get the dynamic url we can use global object called process.env
+// remember to add environment variable in render.com when deployment to production
+
   const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
   const url = activity.asset.url;
   const newUrl = baseUrl + url.slice("http://localhost:4000".length);
@@ -15,7 +19,7 @@ export default function ActivityCard({activity}){
       <Link href={`/activitier/${activity.id}`}>
 
       <div>
-        <Image src={newUrl} height={150} width={150}alt="activity-pic" 
+        <Image src={newUrl} height={150} width={150} alt="activity-pic" 
         className="h-[25em] w-full  rounded-t-[2em] rounded-bl-[2em] object-cover"  />
         <div className="relative">
 

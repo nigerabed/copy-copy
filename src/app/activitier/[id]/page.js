@@ -13,10 +13,11 @@ import Image from "next/image";
 
 export default async function ActivityDetails({ params }) {
 
-  const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
- 
+// Definig baseUrl based on environment. the url is mentioned in .env.development and env.production 
+// to get the dynamic url we can use global object called process.env
+// remember to add environment variable in render.com when deployment to production
 
-  console.log("baseUrl", baseUrl);
+  const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
 
   const cookieStore = await cookies();
 
@@ -53,7 +54,7 @@ export default async function ActivityDetails({ params }) {
   return (
     <>
       <section>
-        <div className="relative">
+        <div className="relative">  
           <Image
             src={newUrl}
             alt="activity"
