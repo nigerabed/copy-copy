@@ -15,10 +15,11 @@ export default function TidmeldButton({ activityId }) {
     }
 
     let isTilmeldtDone = false;
+    const baseUrl = process.env.LANDRUP_API_BASE_URL;
     try {
     
       const response = await fetch(
-        `http://localhost:4000/api/v1/users/${userId}/activities/${activityId}`,
+        `${baseUrl}/api/v1/users/${userId}/activities/${activityId}`,
         {
           method: "POST",
           headers: {

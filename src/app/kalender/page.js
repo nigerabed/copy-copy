@@ -8,10 +8,7 @@ export default async function kalender() {
   const userId = cookieStore.get("landrup_userid");
 
 
-  const baseUrl = process.env.NODE_ENV === "production" 
-  ? "https://landrup-dans-api-4ypt.onrender.com" 
-  : "http://localhost:4000"; // Change this to match your dev server URL
-
+  const baseUrl = process.env.LANDRUP_API_BASE_URL;
   
   try {
     const res = await fetch(

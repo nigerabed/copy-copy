@@ -1,11 +1,9 @@
 
-import LoginForm from "@/components/LoginForm";
-
-
 export const metadata = {
   title: "login side",
   description: "Brugere logind here.",
 };
+import LoginForm from "@/components/LoginForm";
 
 export default function login() {
    

@@ -13,9 +13,8 @@ export const metadata = {
 export default async function SogeSide({ searchParams }) {
   let searchedText = searchParams.search;
 
-  let allActivities = await serverFetch(
-    "http://localhost:4000/api/v1/activities"
-  );
+  const baseUrl = process.env.LANDRUP_API_BASE_URL;
+  let allActivities = await serverFetch( `${baseUrl}/api/v1/activities`);
 
   if(searchedText){
     allActivities = allActivities.filter(activity=> activity.name.toLowerCase().includes(searchedText.toLowerCase()));

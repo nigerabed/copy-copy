@@ -9,12 +9,8 @@ import PageHeader from "@/components/PageHeader";
 import { serverFetch } from "@/lib/server-fetch";
 
 export default async function Activitier() {
-
   
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ;
-
-console.log("baseUrl->", baseUrl);
-
+  const baseUrl = process.env.LANDRUP_API_BASE_URL;
   const data = await serverFetch(`${baseUrl}/api/v1/activities`);
   return (
     <>

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Details-Activities",
+  description: "se activiti detailer here.",
+};
+
 import Button from "@/components/Button";
 import Footer from "@/components/Footer";
 import TidmeldButton from "@/components/TidmeldButton";
@@ -5,14 +10,10 @@ import { serverFetch, serverFetchWithAuth } from "@/lib/server-fetch";
 import { cookies } from "next/headers";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Details-Activities",
-  description: "se activiti detailer here.",
-};
 
 export default async function ActivityDetails({ params }) {
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ;
+  const baseUrl = process.env.LANDRUP_API_BASE_URL;
 
   console.log("baseUrl", baseUrl);
 

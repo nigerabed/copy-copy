@@ -19,8 +19,10 @@ export async function userLoginAction(state, formData) {
 
   if (!result.success) return result.error.format();
 
+  const baseUrl = process.env.LANDRUP_API_BASE_URL;
   try {
-    const response = await fetch("http://localhost:4000/auth/token", {
+
+    const response = await fetch(`${baseUrl}/auth/token`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
