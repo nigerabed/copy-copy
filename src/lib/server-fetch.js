@@ -25,7 +25,7 @@ export async function serverFetchWithAuth(url, token) {
 		//if token expiries server response status code 500.
 		if (response.status === 500) {
 			// Redirect to login page
-			return NextResponse.redirect(new URL("/login", request.url))
+			return NextResponse.redirect(new URL("/login"))
 			 
 		  }
 		return await response.json()
