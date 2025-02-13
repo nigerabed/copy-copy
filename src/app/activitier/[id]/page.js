@@ -14,6 +14,7 @@ import Image from "next/image";
 export default async function ActivityDetails({ params }) {
 
   const baseUrl = process.env.NEXT_PUBLIC_LANDRUP_API_BASE_URL;
+ 
 
   console.log("baseUrl", baseUrl);
 
@@ -24,6 +25,9 @@ export default async function ActivityDetails({ params }) {
   const data = await serverFetch(
     `${baseUrl}/api/v1/activities/${activityId}`
   );
+
+  const url =data.asset.url;
+  const newUrl = baseUrl + url.slice("http://localhost:4000".length);
 
   const userId = cookieStore.get("landrup_userid");
   const token = cookieStore.get("landrup_token");
@@ -51,7 +55,7 @@ export default async function ActivityDetails({ params }) {
       <section>
         <div className="relative">
           <Image
-            src={data.asset.url}
+            src={newUrl}
             alt="activity"
             width={250}
             height={150}
