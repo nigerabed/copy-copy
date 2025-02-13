@@ -11,9 +11,7 @@ import { serverFetch } from "@/lib/server-fetch";
 export default async function Activitier() {
 
   
-  const baseUrl = process.env.NODE_ENV === "production" 
-  ? "https://landrup-dans-api-4ypt.onrender.com" 
-  : "http://localhost:4000"; // Change this to match your dev server URL
+  const baseUrl = process.env.BASE_URL ;
 
 console.log("baseUrl", baseUrl);
   const data = await serverFetch(`${baseUrl}/api/v1/activities`);

@@ -11,12 +11,15 @@ export const metadata = {
 };
 
 export default async function ActivityDetails({ params }) {
+
+  const baseUrl = process.env.BASE_URL ;
+
   const cookieStore = await cookies();
 
   const activityId = params?.id;
 
   const data = await serverFetch(
-    `http://localhost:4000/api/v1/activities/${activityId}`
+    `${baseUrl}/api/v1/activities/${activityId}`
   );
 
   const userId = cookieStore.get("landrup_userid");
@@ -29,7 +32,7 @@ export default async function ActivityDetails({ params }) {
     // tilmeld activityDetails fordi skal jeg brug user api med token)
 
     const userData = await serverFetchWithAuth(
-      `http://localhost:4000/api/v1/users/${userId.value}`,
+      `${baseUrl}/api/v1/users/${userId.value}`,
       token.value
     );
   

@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ActivityCard({activity}){
+
+  const url = activity.asset.url;
+  const newUrl = process.env.BASE_URL + url.slice("http://localhost:4000".length);
     return(
         <>
         <section className="p-[2em]">
@@ -10,7 +13,7 @@ export default function ActivityCard({activity}){
       <Link href={`/activitier/${activity.id}`}>
 
       <div>
-        <Image src={activity.asset.url} height={150} width={150}alt="activity-pic" 
+        <Image src={newUrl} height={150} width={150}alt="activity-pic" 
         className="h-[25em] w-full  rounded-t-[2em] rounded-bl-[2em] object-cover"  />
         <div className="relative">
 
